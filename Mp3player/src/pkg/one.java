@@ -43,6 +43,9 @@ public class one {
 	private AutoDetectParser parser = new AutoDetectParser();
 	private BodyContentHandler handler = new BodyContentHandler(-1);
 	private Metadata metadata = new Metadata();
+
+	
+	private ArrayList<ArrayList<song>> albumList = new ArrayList<ArrayList<song>>();
 	
 	public one() {
 		//JOptionPane.showMessageDialog(null, "Direc not found", "title", JOptionPane.INFORMATION_MESSAGE);
@@ -131,6 +134,10 @@ public class one {
 				titlePanel.add(new JLabel(songList.get(songList.size()-1).getTitle()));
 				albumPanel.add(new JLabel(songList.get(songList.size()-1).getAlbum()));
 				artistPanel.add(new JLabel(songList.get(songList.size()-1).getArtist()));
+				
+				if(checkAlbum(songList.get(songList.getSize()-1))){
+					
+				}
 			}else if(f.getName().contains(".mp3")) {
 				try { parser.parse(new FileInputStream(f),  handler,  metadata);
 				} catch (Exception e) { e.printStackTrace();}
@@ -142,8 +149,15 @@ public class one {
 		}
 	}
 	
-	
-	
+	public boolean checkAlbum(Song s){
+		if(s.getAlbum().equals()){
+			
+		}
+		//check if the song's album matches any of the albums in albumList
+		for(ArrayList<song> ar : albumList){
+			if(ar.getName()
+		}
+	}
 	public void testingStuff() {
 		try {
 			
